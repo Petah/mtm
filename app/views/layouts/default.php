@@ -7,10 +7,9 @@
         
         <base href="<?= BASE_URL; ?>" />
 
-        <link href="css/bootstrap.css" rel="stylesheet">
-        <link href="css/sb-admin.css" rel="stylesheet">
-        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-        <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="css/mtm.css" />
     </head>
 
     <body>
@@ -23,12 +22,12 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html">SB Admin</a>
+                    <a class="navbar-brand" href="index.html">MTM</a>
                 </div>
 
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
-                    <ul class="nav navbar-nav side-nav">
-                        <li class="active"><a href="index.html"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                    <ul id="main-nav" class="nav navbar-nav side-nav">
+                        <li><a href="<?= BASE_URL; ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
                         <li><a href="property"><i class="fa fa-bar-chart-o"></i> Find Me A House</a></li>
                         <li><a href="low"><i class="fa fa-table"></i> Get Cheap Stuff</a></li>
                         <li><a href="watch"><i class="fa fa-desktop"></i> Wait For The Right One</a></li>
@@ -101,14 +100,8 @@
             </div>
 
         </div>
-        <!-- Bootstrap core JavaScript -->
+        
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script src="js/bootstrap.js"></script>
-        <!-- Page Specific Plugins -->
-        <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-        <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
-        <script src="js/morris/chart-data-morris.js"></script>
-        <script src="js/tablesorter/jquery.tablesorter.js"></script>
-        <script src="js/tablesorter/tables.js"></script>
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
     </body>
 </html>
