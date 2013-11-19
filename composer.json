@@ -1,0 +1,20 @@
+{
+    "name": "petah/mtm",
+    "description": "MTM",
+    "license": "AGPL",
+    "authors": [
+        {
+            "name": "David Neilsen",
+            "email": "petah.p@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+
+    },
+    "autoload": {
+        "psr-0": {
+             "MTM": "app/classes/"
+         }
+    }
+}
