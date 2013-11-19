@@ -1,2 +1,2 @@
 <?php
-define('BASE_URL', 'http://localhost:81/work/trademe/public/');
+define('BASE_URL', 'http://localhost/work/mtm/public/');

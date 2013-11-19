@@ -1,272 +1,74 @@
 <div class="row">
     <div class="col-lg-12">
-        <h1>Dashboard <small>Statistics Overview</small></h1>
+        <h1>Property <small>Statistics Overview</small></h1>
         <ol class="breadcrumb">
-            <li class="active"><i class="fa fa-dashboard"></i> Dashboard</li>
+            <li><a href="@todo"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+            <li class="active"><i class="fa fa-wrench"></i> Property</li>
         </ol>
-        <div class="alert alert-success alert-dismissable">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-            Welcome to SB Admin by <a class="alert-link" href="http://startbootstrap.com">Start Bootstrap</a>! Feel free to use this template for your admin needs! We are using a few different plugins to handle the dynamic tables and charts, so make sure you check out the necessary documentation links provided.
-        </div>
     </div>
 </div>
+<form class="form-inline" role="form" style="display: none">
+    <div class="col-sm-4">
+        <h3>Price</h3>
+        <div class="form-group">
+            <label>Desired Price</label>
+            <input class="form-control">
+            <p class="help-block">Your ideal price for the house you are looking for.</p>
+        </div>
+        <div class="form-group">
+            <label>Maximum Price</label>
+            <input class="form-control">
+            <p class="help-block">Your maximum price you can afford.</p>
+        </div>
+    </div>
 
-<div class="row">
-    <div class="col-lg-3">
-        <div class="panel panel-info">
-            <div class="panel-heading">
-                <div class="row">
-                    <div class="col-xs-6">
-                        <i class="fa fa-comments fa-5x"></i>
-                    </div>
-                    <div class="col-xs-6 text-right">
-                        <p class="announcement-heading">456</p>
-                        <p class="announcement-text">New Mentions!</p>
-                    </div>
-                </div>
-            </div>
-            <a href="#">
-                <div class="panel-footer announcement-bottom">
-                    <div class="row">
-                        <div class="col-xs-6">
-                            View Mentions
-                        </div>
-                        <div class="col-xs-6 text-right">
-                            <i class="fa fa-arrow-circle-right"></i>
-                        </div>
-                    </div>
-                </div>
-            </a>
+    <div class="col-sm-4">
+        <h3>Bedrooms</h3>
+        <div class="form-group">
+            <label>Minimum Price</label>
+            <input class="form-control">
+            <p class="help-block">The minimum amount of bedrooms required.</p>
+        </div>
+        <div class="form-group">
+            <label>Desired Price</label>
+            <input class="form-control">
+            <p class="help-block">Your ideal amount of bedrooms.</p>
         </div>
     </div>
-    <div class="col-lg-3">
-        <div class="panel panel-warning">
-            <div class="panel-heading">
-                <div class="row">
-                    <div class="col-xs-6">
-                        <i class="fa fa-check fa-5x"></i>
-                    </div>
-                    <div class="col-xs-6 text-right">
-                        <p class="announcement-heading">12</p>
-                        <p class="announcement-text">To-Do Items</p>
-                    </div>
-                </div>
-            </div>
-            <a href="#">
-                <div class="panel-footer announcement-bottom">
-                    <div class="row">
-                        <div class="col-xs-6">
-                            Complete Tasks
-                        </div>
-                        <div class="col-xs-6 text-right">
-                            <i class="fa fa-arrow-circle-right"></i>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div class="col-lg-3">
-        <div class="panel panel-danger">
-            <div class="panel-heading">
-                <div class="row">
-                    <div class="col-xs-6">
-                        <i class="fa fa-tasks fa-5x"></i>
-                    </div>
-                    <div class="col-xs-6 text-right">
-                        <p class="announcement-heading">18</p>
-                        <p class="announcement-text">Crawl Errors</p>
-                    </div>
-                </div>
-            </div>
-            <a href="#">
-                <div class="panel-footer announcement-bottom">
-                    <div class="row">
-                        <div class="col-xs-6">
-                            Fix Issues
-                        </div>
-                        <div class="col-xs-6 text-right">
-                            <i class="fa fa-arrow-circle-right"></i>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div class="col-lg-3">
-        <div class="panel panel-success">
-            <div class="panel-heading">
-                <div class="row">
-                    <div class="col-xs-6">
-                        <i class="fa fa-comments fa-5x"></i>
-                    </div>
-                    <div class="col-xs-6 text-right">
-                        <p class="announcement-heading">56</p>
-                        <p class="announcement-text">New Orders!</p>
-                    </div>
-                </div>
-            </div>
-            <a href="#">
-                <div class="panel-footer announcement-bottom">
-                    <div class="row">
-                        <div class="col-xs-6">
-                            Complete Orders
-                        </div>
-                        <div class="col-xs-6 text-right">
-                            <i class="fa fa-arrow-circle-right"></i>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div>
-</div>
 
-<div class="row">
-    <div class="col-lg-12">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Traffic Statistics: October 1, 2013 - October 31, 2013</h3>
-            </div>
-            <div class="panel-body">
-                <div id="morris-chart-area"></div>
-            </div>
-        </div>
-    </div>
-</div>
 
-<div class="row">
-    <div class="col-lg-4">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> Traffic Sources: October 1, 2013 - October 31, 2013</h3>
-            </div>
-            <div class="panel-body">
-                <div id="morris-chart-donut"></div>
-                <div class="text-right">
-                    <a href="#">View Details <i class="fa fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
+    <div class="col-sm-4">
+        <h3>Backyard</h3>
+        <div class="form-group">
+            <label>Minimum Size</label>
+            <input class="form-control">
+            <p class="help-block">The maximum price you can afford.</p>
+        </div>
+        <div class="form-group">
+            <label>Desired Size</label>
+            <input class="form-control">
+            <p class="help-block">Your ideal backyard size (@todo in sqmt).</p>
         </div>
     </div>
-    <div class="col-lg-4">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title"><i class="fa fa-clock-o"></i> Recent Activity</h3>
-            </div>
-            <div class="panel-body">
-                <div class="list-group">
-                    <a href="#" class="list-group-item">
-                        <span class="badge">just now</span>
-                        <i class="fa fa-calendar"></i> Calendar updated
-                    </a>
-                    <a href="#" class="list-group-item">
-                        <span class="badge">4 minutes ago</span>
-                        <i class="fa fa-comment"></i> Commented on a post
-                    </a>
-                    <a href="#" class="list-group-item">
-                        <span class="badge">23 minutes ago</span>
-                        <i class="fa fa-truck"></i> Order 392 shipped
-                    </a>
-                    <a href="#" class="list-group-item">
-                        <span class="badge">46 minutes ago</span>
-                        <i class="fa fa-money"></i> Invoice 653 has been paid
-                    </a>
-                    <a href="#" class="list-group-item">
-                        <span class="badge">1 hour ago</span>
-                        <i class="fa fa-user"></i> A new user has been added
-                    </a>
-                    <a href="#" class="list-group-item">
-                        <span class="badge">2 hours ago</span>
-                        <i class="fa fa-check"></i> Completed task: "pick up dry cleaning"
-                    </a>
-                    <a href="#" class="list-group-item">
-                        <span class="badge">yesterday</span>
-                        <i class="fa fa-globe"></i> Saved the world
-                    </a>
-                    <a href="#" class="list-group-item">
-                        <span class="badge">two days ago</span>
-                        <i class="fa fa-check"></i> Completed task: "fix error on sales page"
-                    </a>
-                </div>
-                <div class="text-right">
-                    <a href="#">View All Activity <i class="fa fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-4">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title"><i class="fa fa-money"></i> Recent Transactions</h3>
-            </div>
-            <div class="panel-body">
-                <div class="table-responsive">
-                    <table class="table table-bordered table-hover table-striped tablesorter">
-                        <thead>
-                            <tr>
-                                <th>Order # <i class="fa fa-sort"></i></th>
-                                <th>Order Date <i class="fa fa-sort"></i></th>
-                                <th>Order Time <i class="fa fa-sort"></i></th>
-                                <th>Amount (USD) <i class="fa fa-sort"></i></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>3326</td>
-                                <td>10/21/2013</td>
-                                <td>3:29 PM</td>
-                                <td>$321.33</td>
-                            </tr>
-                            <tr>
-                                <td>3325</td>
-                                <td>10/21/2013</td>
-                                <td>3:20 PM</td>
-                                <td>$234.34</td>
-                            </tr>
-                            <tr>
-                                <td>3324</td>
-                                <td>10/21/2013</td>
-                                <td>3:03 PM</td>
-                                <td>$724.17</td>
-                            </tr>
-                            <tr>
-                                <td>3323</td>
-                                <td>10/21/2013</td>
-                                <td>3:00 PM</td>
-                                <td>$23.71</td>
-                            </tr>
-                            <tr>
-                                <td>3322</td>
-                                <td>10/21/2013</td>
-                                <td>2:49 PM</td>
-                                <td>$8345.23</td>
-                            </tr>
-                            <tr>
-                                <td>3321</td>
-                                <td>10/21/2013</td>
-                                <td>2:23 PM</td>
-                                <td>$245.12</td>
-                            </tr>
-                            <tr>
-                                <td>3320</td>
-                                <td>10/21/2013</td>
-                                <td>2:15 PM</td>
-                                <td>$5663.54</td>
-                            </tr>
-                            <tr>
-                                <td>3319</td>
-                                <td>10/21/2013</td>
-                                <td>2:13 PM</td>
-                                <td>$943.45</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="text-right">
-                    <a href="#">View All Transactions <i class="fa fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+</form>
+<div id="map-canvas"></div>
+<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+    function initialize() {
+        var mapOptions = {
+            center: new google.maps.LatLng(-37.790252,175.300598),
+            zoom: 8,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+        var infowindow = new google.maps.InfoWindow();
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+<style type="text/css">
+    #map-canvas {
+        width: 100%;
+        height: 500px;
+    }
+</style>

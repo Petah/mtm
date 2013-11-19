@@ -9,6 +9,7 @@ include ROOT . '/vendor/autoload.php';
 require_once ROOT . '/environment.php';
 require_once ROOT . '/app/functions/global.php';
 
+(new Whoops\Run())->pushHandler(new Whoops\Handler\PrettyPageHandler())->register();
 
 $routes = [
     '/' => 'RootController::index',
@@ -27,5 +28,5 @@ $route = substr($url, strlen(rtrim(BASE_URL, '/'))) ?: '/';
 if (isset($routes[$route])) {
     call_user_func('MTM\Action\\' . $routes[$route]);
 } else {
-    call_user_func($routes['/404']);
+    MTM\Action\RootController::notFound();
 }

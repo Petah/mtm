@@ -10,7 +10,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-
+        "filp/whoops": "~1"
     },
     "autoload": {
         "psr-0": {
