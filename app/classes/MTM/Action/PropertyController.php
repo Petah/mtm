@@ -20,13 +20,11 @@ class PropertyController extends BaseController {
             // @todo form validation
             $districts = explode(',', $this->request->getInput('districts'));
             $localityAPI->setDistricts($districts);
-//            $localityAPI->setSuburbs(explode(',', $this->request->getInput('suburbs')));
 
             $propertyAPI->setDistricts($districts);
-//            $propertyAPI->setSuburbs(explode(',', $this->request->getInput('suburbs')));
             $properties = $propertyAPI->get();
         }
-        // @todo select input districts
+        
         $localities = $localityAPI->get();
         render('property/index', [
             'localityAPI' => $localityAPI,

@@ -10,21 +10,6 @@
 <form id="properties" class="form-inline" role="form" method="post">
     <div class="col-sm-2">
         <h3>Districts</h3>
-        <?php /*
-        <input id="suburbs" type="hidden" name="suburbs" />
-        <select id="suburb-select" multiple="multiple" data-input="suburbs" class="array-input">
-            <?php foreach ($data->localities as $locality): ?>
-                <?php foreach ($locality->districts as $district): ?>
-                    <optgroup label="<?= $locality->name->ha(); ?> - <?= $district->name->ha(); ?>">
-                        <?php foreach ($district->suburbs as $suburb): ?>
-                            <option value="<?= $suburb->suburbID->ha(); ?>"><?= $suburb->name->h(); ?></option>
-                        <?php endforeach; ?>
-                    </optgroup>
-                <?php endforeach; ?>
-            <?php endforeach; ?>
-        </select>
-         */ ?>
-
         <input id="districts" type="hidden" name="districts" />
         <select id="district-select" multiple="multiple" data-input="districts" class="form-control array-input">
             <?php foreach ($data->localities as $locality): ?>
