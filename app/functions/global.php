@@ -21,6 +21,37 @@ function getRequestedURL() {
     return "$protocol://$host$port$uri$query";
 }
 
+function buildQuery(array $data) {
+    $query = [];
+    uksort($data, 'strnatcasecmp');
+    foreach ($data as $key => $value) {
+        if (is_array($value)) {
+            natcasesort($value);
+            $value = implode(',', $value);
+        }
+        $value = preg_replace('/[^a-z0-9,]/i', '', $value);
+        if ($value) {
+            $key = preg_replace('/[^a-z0-9_]/i', '', $key);
+            $query[] = $key . '=' . $value;
+        }
+    }
+    return implode('&', $query);
+}
+
 function render($view, $data = [], $layout = 'default') {
+    $data = new MTM\DataRenderer($data);
     include ROOT . '/app/views/layouts/' . $layout . '.php';
+}
+
+function dump() {
+    echo '<pre>';
+    foreach (func_get_args() as $arg) {
+        var_dump($arg);
+    }
+    if (function_exists('xdebug_print_function_stack')) {
+        xdebug_print_function_stack();
+    } else {
+        debug_print_backtrace();
+    }
+    die('Execution killed by: ' . __FUNCTION__);
 }

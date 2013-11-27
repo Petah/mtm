@@ -12,21 +12,30 @@ require_once ROOT . '/app/functions/global.php';
 (new Whoops\Run())->pushHandler(new Whoops\Handler\PrettyPageHandler())->register();
 
 $routes = [
-    '/' => 'RootController::index',
-    '/404' => 'RootController::notFound',
+    '/' => 'MTM\Action\RootController::index',
+    '/404' => 'MTM\Action\RootController::notFound',
 
-    '/property' => 'PropertyController::index',
+    '/property' => 'MTM\Action\PropertyController::index',
+    '/property/icon' => 'MTM\Action\PropertyController::icon',
 
-    '/low' => 'LowController::index',
+    '/low' => 'MTM\Action\LowController::index',
 
-    '/watch' => 'WatchController::index',
+    '/watch' => 'MTM\Action\WatchController::index',
 ];
 
 $url = getRequestedURL();
-$route = substr($url, strlen(rtrim(BASE_URL, '/'))) ?: '/';
+
+$request = new MTM\Request();
+$request->setURL($url);
+$request->setInput($_REQUEST);
+
+$route = substr(parse_url($url)['path'], strlen(rtrim(BASE_PATH, '/'))) ?: '/';
 
 if (isset($routes[$route])) {
-    call_user_func('MTM\Action\\' . $routes[$route]);
+    list($class, $method) = explode('::', $routes[$route]);
+    $controller = new $class();
+    $controller->setRequest($request);
+    $controller->$method();
 } else {
     MTM\Action\RootController::notFound();
 }
