@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "ae8bfbdb4e1a495178da2e4f86d48f6d",
+    "hash": "5f144825e26cb51b4bab51ed2e431e47",
     "packages": [
         {
             "name": "filp/whoops",
@@ -55,6 +55,116 @@
                 "zf2"
             ],
             "time": "2013-10-28 22:06:33"
+        },
+        {
+            "name": "monolog/monolog",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Seldaek/monolog.git",
+                "reference": "6f5b3d2a9c63a857d40d200f1bb9f62991c07bf8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/6f5b3d2a9c63a857d40d200f1bb9f62991c07bf8",
+                "reference": "6f5b3d2a9c63a857d40d200f1bb9f62991c07bf8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "psr/log": "~1.0"
+            },
+            "require-dev": {
+                "aws/aws-sdk-php": "~2.4.8",
+                "doctrine/couchdb": "dev-master",
+                "mlehner/gelf-php": "1.0.*",
+                "phpunit/phpunit": "~3.7.0",
+                "raven/raven": "0.5.*",
+                "ruflin/elastica": "0.90.*"
+            },
+            "suggest": {
+                "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
+                "doctrine/couchdb": "Allow sending log messages to a CouchDB server",
+                "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
+                "ext-mongo": "Allow sending log messages to a MongoDB server",
+                "mlehner/gelf-php": "Allow sending log messages to a GrayLog2 server",
+                "raven/raven": "Allow sending log messages to a Sentry server",
+                "ruflin/elastica": "Allow sending log messages to an Elastic Search server"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.7.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Monolog": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Sends your logs to files, sockets, inboxes, databases and various web services",
+            "homepage": "http://github.com/Seldaek/monolog",
+            "keywords": [
+                "log",
+                "logging",
+                "psr-3"
+            ],
+            "time": "2013-11-25 13:58:14"
+        },
+        {
+            "name": "psr/log",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/log.git",
+                "reference": "134145e8d08ddcb9bb8f49a2feb9aa1f2393650c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/134145e8d08ddcb9bb8f49a2feb9aa1f2393650c",
+                "reference": "134145e8d08ddcb9bb8f49a2feb9aa1f2393650c",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Psr\\Log\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http://www.php-fig.org/"
+                }
+            ],
+            "description": "Common interface for logging libraries",
+            "keywords": [
+                "log",
+                "psr",
+                "psr-3"
+            ],
+            "time": "2013-11-19 10:21:35"
         },
         {
             "name": "symfony/property-access",
@@ -282,6 +392,256 @@
                 "sessions"
             ],
             "time": "2013-11-18 07:19:58"
+        },
+        {
+            "name": "theodordiaconu/geshi",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/theodorDiaconu/geshi.git",
+                "reference": "c2a5294496b34d7561db5c0641b7f960d930f6b1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/theodorDiaconu/geshi/zipball/c2a5294496b34d7561db5c0641b7f960d930f6b1",
+                "reference": "c2a5294496b34d7561db5c0641b7f960d930f6b1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "GeSHi": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Geshi library",
+            "homepage": "http://qbnz.com/highlighter/",
+            "keywords": [
+                "Symfony2",
+                "geshi",
+                "highlighter"
+            ],
+            "time": "2013-03-19 00:39:21"
+        },
+        {
+            "name": "twig/twig",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fabpot/Twig.git",
+                "reference": "cab9fd9a100e74aafa201a03ca31aeeb4097c9bc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fabpot/Twig/zipball/cab9fd9a100e74aafa201a03ca31aeeb4097c9bc",
+                "reference": "cab9fd9a100e74aafa201a03ca31aeeb4097c9bc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.4"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.15-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Twig_": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Armin Ronacher",
+                    "email": "armin.ronacher@active-4.com"
+                }
+            ],
+            "description": "Twig, the flexible, fast, and secure template language for PHP",
+            "homepage": "http://twig.sensiolabs.org",
+            "keywords": [
+                "templating"
+            ],
+            "time": "2013-11-24 18:36:20"
+        },
+        {
+            "name": "xmod/common",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@git.panmedia.co.nz:siteignite/modules/xmod",
+                "reference": "a02a3120563d5c9477ec9070ddc1ca74e161bce1"
+            },
+            "require": {
+                "twig/twig": "~1.12"
+            },
+            "bin": [
+                "bin/xr"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "XMod\\Common": "classes/"
+                },
+                "files": [
+                    "include.php",
+                    "functions.php"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "David Neilsen",
+                    "email": "david@panmedia.co.nz"
+                },
+                {
+                    "name": "Michael Robinson",
+                    "email": "michael@panmedia.co.nz"
+                }
+            ],
+            "description": "Mammoth common module.",
+            "homepage": "http://www.mammoth-framework.com/modules/common",
+            "keywords": [
+                "common",
+                "helper",
+                "tool"
+            ],
+            "time": "2013-11-15 04:22:48"
+        },
+        {
+            "name": "xmod/debug",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@git.panmedia.co.nz:siteignite/modules/xmod-debug",
+                "reference": "9ed43146bf1ba154d86c5d04c645450c3a2f503a"
+            },
+            "require": {
+                "theodordiaconu/geshi": "dev-master",
+                "xmod/log": "dev-master"
+            },
+            "suggest": {
+                "raveren/kint": "Kint style var dump.",
+                "sunra/dbug": "ColdFusion style var dump."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "XMod": "classes/"
+                },
+                "files": [
+                    "include.php"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "David Neilsen",
+                    "email": "david@panmedia.co.nz"
+                },
+                {
+                    "name": "Michael Robinson",
+                    "email": "michael@panmedia.co.nz"
+                }
+            ],
+            "description": "Mammoth debugging module.",
+            "homepage": "http://www.mammoth-framework.com/modules/debug",
+            "keywords": [
+                "debug",
+                "error",
+                "exception",
+                "handling"
+            ],
+            "time": "2013-11-26 03:48:12"
+        },
+        {
+            "name": "xmod/error",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@git.panmedia.co.nz:siteignite/modules/xmod-error",
+                "reference": "d9c11911b697903f2792ed3fe2bf57e81afd7549"
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "xmod/debug": "dev-master"
+            },
+            "require-dev": {
+                "phing/phing": ">=2.4.12",
+                "phpunit/phpunit": ">=3.7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "XMod": "classes/"
+                },
+                "files": [
+                    "include.php"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "David Neilsen",
+                    "email": "david@panmedia.co.nz"
+                },
+                {
+                    "name": "Michael Robinson",
+                    "email": "michael@panmedia.co.nz"
+                }
+            ],
+            "description": "Mammoth error handling module.",
+            "homepage": "http://www.mammoth-framework.com/modules/error",
+            "keywords": [
+                "database",
+                "db"
+            ],
+            "time": "2013-11-14 04:29:48"
+        },
+        {
+            "name": "xmod/log",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@git.panmedia.co.nz:siteignite/modules/xmod-log",
+                "reference": "fcb62ea28fe330602685abb36bbf61ec812638d6"
+            },
+            "require": {
+                "monolog/monolog": "~1.6",
+                "xmod/common": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "XMod": "classes/"
+                },
+                "files": [
+                    "include.php"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "David Neilsen",
+                    "email": "david@panmedia.co.nz"
+                }
+            ],
+            "description": "Mammoth log module.",
+            "homepage": "http://www.mammoth-framework.com/modules/log",
+            "keywords": [
+                "log"
+            ],
+            "time": "2013-11-20 23:01:57"
         }
     ],
     "packages-dev": [
@@ -291,9 +651,10 @@
 
     ],
     "minimum-stability": "dev",
-    "stability-flags": [
-
-    ],
+    "stability-flags": {
+        "xmod/error": 20,
+        "xmod/debug": 20
+    },
     "platform": [
 
     ],

@@ -6,14 +6,14 @@
  */
 namespace MTM\Action;
 
-class RootController {
+class RootController extends BaseController {
 
-    public static function index() {
-        render('index');
+    public function index() {
+        $this->render('index');
     }
 
-    public static function notFound() {
-        render('404');
+    public function notFound() {
+        $this->render('404');
     }
 
 }

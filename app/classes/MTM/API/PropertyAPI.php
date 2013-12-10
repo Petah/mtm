@@ -13,6 +13,8 @@ class PropertyAPI extends BaseAPI {
 
     public $uri = '/v1/Search/Property/Residential.json';
     //?bedrooms_min=3&district=$d&price_max=300000&page=$i
+    public $page = 1;
+    public $pageSize = 25;
     public $roomsDesired = 4;
     public $roomsMin = 3;
     public $priceDesired = 400000;
@@ -20,14 +22,13 @@ class PropertyAPI extends BaseAPI {
     public $sizeDesired = 1000;
     public $sizeMin = 500;
     public $districts = [];
-    public $suburbs = [];
 
     public function get() {
         $query = buildQuery([
+            'page' => $this->getPage(),
             'bedrooms_min' => $this->getRoomsMin(),
             'price_max' => $this->getPriceMax(),
             'district' => implode(',', $this->getDistricts()),
-            'suburb' => implode(',', $this->getSuburbs()),
         ]);
         $result = $this->request($this->getURI() . '?' . $query);
         // @todo validate result
@@ -86,18 +87,42 @@ class PropertyAPI extends BaseAPI {
             }
 
             $properties[] = [
+                'id' => $property->listingID->i(),
                 'title' => $property->title->s(),
                 'price' => $property->priceDisplay->s(),
-                'lat' => $property->geographicLocation->latitude->d(),
-                'lng' => $property->geographicLocation->longitude->d(),
+                'lat' => $property->geographicLocation->latitude->f(),
+                'lng' => $property->geographicLocation->longitude->f(),
                 'icon' => $icon,
             ];
         }
 
-        return $properties;
+        return [
+            'page' => $data->page->i(),
+            'pageSize' => $data->pageSize->i(),
+            'totalCount' => $data->totalCount->i(),
+            'properties' => $properties,
+        ];
     }
 
     // <editor-fold defaultstate="collapsed" desc="Getters and setters">
+    public function getPage() {
+        return $this->page;
+    }
+
+    public function setPage($page) {
+        $this->page = $page;
+        return $this;
+    }
+
+    public function getPageSize() {
+        return $this->pageSize;
+    }
+
+    public function setPageSize($pageSize) {
+        $this->pageSize = $pageSize;
+        return $this;
+    }
+
     public function getURI() {
         return $this->uri;
     }
@@ -170,20 +195,6 @@ class PropertyAPI extends BaseAPI {
 
     public function addDistrict($district) {
         $this->districts[] = $district;
-        return $this;
-    }
-
-    public function getSuburbs() {
-        return $this->suburbs;
-    }
-
-    public function setSuburbs(array $suburbs) {
-        $this->suburbs = $suburbs;
-        return $this;
-    }
-
-    public function addSuburb($suburb) {
-        $this->suburbs[] = $suburb;
         return $this;
     }
     // </editor-fold>

@@ -7,9 +7,11 @@
 
         <base href="<?= BASE_URL; ?>" />
 
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" />
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
-        <link rel="stylesheet" href="css/mtm.css" />
+        <?php
+            foreach ($styleSheets as $styleSheet) {
+                echo "<link rel='stylesheet' type='text/css' href='$styleSheet' />" . PHP_EOL;
+            }
+        ?>
     </head>
 
     <body>
@@ -101,8 +103,10 @@
 
         </div>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
-        <?= isset($footer) ? $footer : null; ?>
+        <?php
+            foreach ($scripts as $script) {
+                echo "<script type='text/javascript' src='$script'></script>" . PHP_EOL;
+            }
+        ?>
     </body>
 </html>

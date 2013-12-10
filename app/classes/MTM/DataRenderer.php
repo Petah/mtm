@@ -5,6 +5,7 @@
  * @author David Neilsen <petah.p@gmail.com>
  */
 namespace MTM;
+use DateTime;
 use Iterator;
 
 class DataRenderer implements Iterator {
@@ -66,34 +67,91 @@ class DataRenderer implements Iterator {
         return new static(call_user_func_array([$this->data, $name], $arguments));
     }
 
+    /**
+     * Escape HTML.
+     *
+     * @return string
+     */
     public function h() {
         return htmlspecialchars($this->data);
     }
 
+    /**
+     * Escape HTML attribute.
+     *
+     * @return string
+     */
     public function ha() {
         return htmlspecialchars($this->data, ENT_QUOTES, 'UTF-8');
     }
 
+    /**
+     * Return string.
+     *
+     * @return string
+     */
     public function s() {
         return (string) $this->data;
     }
 
-    public function d() {
+    /**
+     * Return float.
+     *
+     * @param bool $loose Remove non numeric charaters (exlcuding . and -).
+     * @return float
+     */
+    public function f($loose = false) {
+        if ($loose) {
+            return (float) preg_replace('/[^0-9.-]/', '', $this->data);
+        }
         return (float) $this->data;
     }
 
+    /**
+     * Return integer.
+     *
+     * @return int
+     */
     public function i() {
         return (int) $this->data;
     }
 
+    /**
+     * Return boolean.
+     *
+     * @return bool
+     */
     public function b() {
         return (bool) $this->data;
     }
 
+    /**
+     * Return DateTime.
+     *
+     * @return bool
+     */
+    public function d() {
+        if (preg_match('@/Date\(([0-9]+)\)/@', $this->data, $matches)) {
+            return (new DateTime('@' . floor($matches[1] / 1000)))->format('Y-m-d H:i:s');
+        }
+        return (new DateTime($this->data))->format('Y-m-d H:i:s');
+    }
+
+    /**
+     * Return JSON.
+     *
+     * @return string
+     */
     public function j() {
         return json_encode($this->data, JSON_PRETTY_PRINT);
     }
 
+    /**
+     * Return decimal formatted as money.
+     *
+     * @param int $decimalPlaces
+     * @return string
+     */
     public function m($decimalPlaces = 0) {
         $amount = $this->data;
         $negitive = $amount < 0;
@@ -114,6 +172,12 @@ class DataRenderer implements Iterator {
         return $amount;
     }
 
+    /**
+     * Return number formatted with thousand separators.
+     *
+     * @param int $decimalPlaces
+     * @return string
+     */
     public function n($decimalPlaces = 0) {
         return number_format($this->data, $decimalPlaces);
     }

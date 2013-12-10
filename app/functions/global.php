@@ -37,21 +37,3 @@ function buildQuery(array $data) {
     }
     return implode('&', $query);
 }
-
-function render($view, $data = [], $layout = 'default') {
-    $data = new MTM\DataRenderer($data);
-    include ROOT . '/app/views/layouts/' . $layout . '.php';
-}
-
-function dump() {
-    echo '<pre>';
-    foreach (func_get_args() as $arg) {
-        var_dump($arg);
-    }
-    if (function_exists('xdebug_print_function_stack')) {
-        xdebug_print_function_stack();
-    } else {
-        debug_print_backtrace();
-    }
-    die('Execution killed by: ' . __FUNCTION__);
-}

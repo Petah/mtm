@@ -18,15 +18,26 @@ class PropertyController extends BaseController {
         $properties = [];
         if ($this->request->hasInput()) {
             // @todo form validation
-            $districts = explode(',', $this->request->getInput('districts'));
-            $localityAPI->setDistricts($districts);
+            $propertyAPI->setPage($this->request->getInput('page'));
+            $propertyAPI->setPriceDesired($this->request->getInput('price-desired'));
+            $propertyAPI->setPriceMax($this->request->getInput('price-max'));
+            $propertyAPI->setRoomsDesired($this->request->getInput('rooms-desired'));
+            $propertyAPI->setRoomsMin($this->request->getInput('rooms-max'));
+            $propertyAPI->setSizeDesired($this->request->getInput('size-desired'));
+            $propertyAPI->setSizeMin($this->request->getInput('size-min'));
 
+            $districts = explode(',', $this->request->getInput('districts'));
             $propertyAPI->setDistricts($districts);
-            $properties = $propertyAPI->get();
+
+            die(json_encode($propertyAPI->get(), JSON_PRETTY_PRINT));
         }
-        
+
         $localities = $localityAPI->get();
-        render('property/index', [
+
+        $this->addScript('//maps.googleapis.com/maps/api/js?sensor=false');
+        $this->addScript('js/properties.js');
+        $this->addStyleSheet('css/properties.css');
+        $this->render('property/index', [
             'localityAPI' => $localityAPI,
             'propertyAPI' => $propertyAPI,
             'localities' => $localities,

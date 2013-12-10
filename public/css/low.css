@@ -1,0 +1,28 @@
+.listing {
+  border: 1px solid #aaa;
+  padding: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  *zoom: 1;
+}
+
+.listing h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.listing img {
+  float: left;
+}
+
+.listing-info {
+  float: left;
+  margin: 0 10px;
+}
+
+.listing dt,
+.listing dl {
+  margin: 0;
+  display: inline-block;
+}
