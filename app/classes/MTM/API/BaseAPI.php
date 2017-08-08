@@ -18,8 +18,10 @@ class BaseAPI {
         $item = $this->getCache($path);
         $result = $item->get();
         if ($item->isMiss()) {
-            $result = json_decode(file_get_contents($this->getURL() . $uri), true);
-            $item->set($result);
+            debugLog($this->getURL() . $uri);
+            $result = file_get_contents($this->getURL() . $uri);
+            $result = json_decode($result, true);
+            $item->set($result, 300);
         }
         return $result;
     }
@@ -49,13 +51,6 @@ class BaseAPI {
 
     public function getCachePath($path) {
         return trim(strtolower($path), '/');
-    }
-
-    public function cache() {
-
-        // Set the "key", which is the path the Stash object points to. This will be
-        // discussed in depth later, but for now just know it's an identifier.
-        $item = $stash->getItem('path/to/data');
     }
 
     public function getUrl() {

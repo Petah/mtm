@@ -5,6 +5,7 @@ var Low = {
         MTM.queue.push(this.load);
     },
     load: function() {
+        $('#listings').html('<div class="alert alert-info">Loading...</div>');
         $.ajax({
             url: '',
             method: 'post',
@@ -14,11 +15,16 @@ var Low = {
             var template = twig({
                 data: $('#low-template').html()
             });
+            console.log(data);
             var html = '';
             for (var i = 0, l = data.length; i < l; i++) {
                 html += template.render(data[i]);
             }
-            $('#listings').html(html);
+            if (!html) {
+                $('#listings').html('<div class="alert alert-info">No results...</div>');
+            } else {
+                $('#listings').html(html);
+            }
         }.bind(this)).error(function(xhr) {
             $('#listings').html(xhr.responseText);
         }.bind(this)).always(function() {

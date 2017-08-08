@@ -11,6 +11,8 @@ class Input {
     public $name;
     public $label;
     public $value;
+    public $type;
+    public $text;
     public $description;
 
     public function __construct($name) {
@@ -45,6 +47,24 @@ class Input {
 
     public function setValue($value) {
         $this->value = $value;
+        return $this;
+    }
+
+    public function getType() {
+        return $this->type;
+    }
+
+    public function setType($type) {
+        $this->type = $type;
+        return $this;
+    }
+
+    public function getText() {
+        return $this->text;
+    }
+
+    public function setText($text) {
+        $this->text = $text;
         return $this;
     }
 

@@ -18,4 +18,8 @@ class Form {
         return $this->components[] = new Form\MultiSelect($name);
     }
 
+    public function addButton($name) {
+        return $this->components[] = new Form\Button($name);
+    }
+
 }

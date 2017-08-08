@@ -37,3 +37,7 @@ function buildQuery(array $data) {
     }
     return implode('&', $query);
 }
+
+function debugLog($message) {
+    file_put_contents(ROOT . '/log/debug.log', $message. PHP_EOL, FILE_APPEND);
+}

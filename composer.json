@@ -14,7 +14,9 @@
         "tedivm/stash": "~0.11.1",
         "symfony/validator": "~2.3",
         "xmod/error": "dev-master",
-        "xmod/debug": "dev-master"
+        "xmod/debug": "dev-master",
+        "symfony/console": "~2.4",
+        "xmod/form": "dev-master"
     },
     "autoload": {
         "psr-0": {

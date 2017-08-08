@@ -1,10 +1,12 @@
 <div class="col-sm-3">
     <h3>Item</h3>
-    <form id="low" action="" method="post">
+    <form id="low" action="<?= BASE_URL; ?>low/save" method="post">
         <?= $form->addMultiSelect('categories')->setLabel('Categories')->setOptionGroups($data->lowAPI->getCategories()); ?>
+        <?= $form->addTextField('categories-filter')->addData('filter', 'categories'); ?>
         <?= $form->addTextField('search')->setLabel('Search Terms')->setDescription('A few keywords to help refine your results.'); ?>
         <?= $form->addTextField('price-desired')->setLabel('Ideal Price')->setDescription('The ideal price you would like to pay.'); ?>
         <?= $form->addTextField('price-max')->setLabel('Maximum Price')->setDescription('The maximum price you are willing to pay. This is a hard limit and you will recieave no alerts of matching items over this price.'); ?>
+        <?= $form->addButton('save')->setText('Save'); ?>
     </form>
 </div>
 

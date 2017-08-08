@@ -108,5 +108,14 @@
                 echo "<script type='text/javascript' src='$script'></script>" . PHP_EOL;
             }
         ?>
+
+        <script type="text/javascript">
+            $(function() {
+                $('body').on('click', 'select[multiple] optgroup', function() {
+                    $(this).find('option').prop('selected', true);
+                });
+            });
+        </script>
+
     </body>
 </html>

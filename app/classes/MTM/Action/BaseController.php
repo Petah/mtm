@@ -12,6 +12,7 @@ use MTM\Request;
 class BaseController {
 
     public $request;
+    public $dataStore;
     public $scripts = [
         '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js',
         '//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js',
@@ -31,12 +32,29 @@ class BaseController {
         include ROOT . '/app/views/layouts/' . $layout . '.php';
     }
 
+    public function redirect($url) {
+        header('Location: ' . $url);
+    }
+
+    public function json($data) {
+        echo json_encode($data, JSON_PRETTY_PRINT);
+    }
+
     public function getRequest() {
         return $this->request;
     }
 
     public function setRequest(Request $request) {
         $this->request = $request;
+        return $this;
+    }
+
+    public function getDataStore() {
+        return $this->dataStore;
+    }
+
+    public function setDataStore($dataStore) {
+        $this->dataStore = $dataStore;
         return $this;
     }
 

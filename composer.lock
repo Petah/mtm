@@ -1,9 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
     ],
-    "hash": "5f144825e26cb51b4bab51ed2e431e47",
+    "hash": "f08d7925e4268dbd4b4904186c2b14c0",
     "packages": [
         {
             "name": "filp/whoops",
@@ -165,6 +166,63 @@
                 "psr-3"
             ],
             "time": "2013-11-19 10:21:35"
+        },
+        {
+            "name": "symfony/console",
+            "version": "dev-master",
+            "target-dir": "Symfony/Component/Console",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Console.git",
+                "reference": "402f7d86b1073498812cfa5466132aa190183575"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/402f7d86b1073498812cfa5466132aa190183575",
+                "reference": "402f7d86b1073498812cfa5466132aa190183575",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "psr/log": "~1.0",
+                "symfony/event-dispatcher": "~2.1"
+            },
+            "suggest": {
+                "psr/log": "For using the console logger",
+                "symfony/event-dispatcher": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.6-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Console\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Console Component",
+            "homepage": "http://symfony.com",
+            "time": "2014-05-23 14:36:49"
         },
         {
             "name": "symfony/property-access",
@@ -479,6 +537,36 @@
             "time": "2013-11-24 18:36:20"
         },
         {
+            "name": "xmod/asset",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@git.panmedia.co.nz:siteignite/modules/xmod-asset",
+                "reference": "d46da0db5078bda6776b2eb2cb718588d749cf95"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "XMod\\Asset": "classes/"
+                },
+                "files": [
+                    "include.php"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "David Neilsen",
+                    "email": "david@panmedia.co.nz"
+                }
+            ],
+            "description": "Mammoth asset module.",
+            "homepage": "http://www.mammoth-framework.com/modules/asset",
+            "keywords": [
+                "assets"
+            ],
+            "time": "2014-09-08 03:30:29"
+        },
+        {
             "name": "xmod/common",
             "version": "dev-master",
             "source": {
@@ -610,6 +698,115 @@
             "time": "2013-11-14 04:29:48"
         },
         {
+            "name": "xmod/form",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@git.panmedia.co.nz:siteignite/modules/xmod-form",
+                "reference": "01c079a03c13534475a10bc6f918812a7df983d9"
+            },
+            "require": {
+                "symfony/validator": "~2",
+                "xmod/asset": "dev-master",
+                "xmod/common": "dev-master",
+                "xmod/html": "dev-master",
+                "xmod/module": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "XMod": "classes/"
+                },
+                "files": [
+                    "include.php"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "David Neilsen",
+                    "email": "david@panmedia.co.nz"
+                },
+                {
+                    "name": "Michael Robinson",
+                    "email": "michael@panmedia.co.nz"
+                }
+            ],
+            "description": "Mammoth form module.",
+            "homepage": "http://www.mammoth-framework.com/modules/form",
+            "keywords": [
+                "form"
+            ],
+            "time": "2014-09-08 00:12:32"
+        },
+        {
+            "name": "xmod/html",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@git.panmedia.co.nz:siteignite/modules/xmod-html",
+                "reference": "f71bd8ad69386444b74afeaf20b096a9fa7890ed"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "XMod": "classes/"
+                }
+            },
+            "authors": [
+                {
+                    "name": "David Neilsen",
+                    "email": "david@panmedia.co.nz"
+                },
+                {
+                    "name": "Michael Robinson",
+                    "email": "michael@panmedia.co.nz"
+                }
+            ],
+            "description": "Mammoth html module.",
+            "homepage": "http://www.mammoth-framework.com/modules/html",
+            "keywords": [
+                "html"
+            ],
+            "time": "2014-07-04 03:49:31"
+        },
+        {
+            "name": "xmod/http",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@git.panmedia.co.nz:siteignite/modules/xmod-http",
+                "reference": "393cb5839954f80660b7b0b630899f43939b3f7e"
+            },
+            "require": {
+                "xmod/common": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "XMod": "classes/"
+                },
+                "files": [
+                    "include.php"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "David Neilsen",
+                    "email": "david@panmedia.co.nz"
+                },
+                {
+                    "name": "Michael Robinson",
+                    "email": "michael@panmedia.co.nz"
+                }
+            ],
+            "description": "Mammoth HTTP module.",
+            "homepage": "http://www.mammoth-framework.com/modules/http",
+            "keywords": [
+                "http"
+            ],
+            "time": "2014-09-04 23:21:51"
+        },
+        {
             "name": "xmod/log",
             "version": "dev-master",
             "source": {
@@ -642,23 +839,153 @@
                 "log"
             ],
             "time": "2013-11-20 23:01:57"
+        },
+        {
+            "name": "xmod/module",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@git.panmedia.co.nz:siteignite/modules/xmod-module",
+                "reference": "79d7bb8e6f7b6f1db3e7063f165e411a94d86fcb"
+            },
+            "require": {
+                "xmod/common": "dev-master",
+                "xmod/render": "dev-master",
+                "xmod/route": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "XMod": "classes/"
+                },
+                "files": [
+                    "include.php"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "David Neilsen",
+                    "email": "david@panmedia.co.nz"
+                },
+                {
+                    "name": "Michael Robinson",
+                    "email": "michael@panmedia.co.nz"
+                }
+            ],
+            "description": "Mammoth module.",
+            "homepage": "http://www.mammoth-framework.com/modules/module",
+            "keywords": [
+                "module"
+            ],
+            "time": "2014-09-11 01:52:30"
+        },
+        {
+            "name": "xmod/registry",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@git.panmedia.co.nz:siteignite/modules/xmod-registry",
+                "reference": "895361235b4cf5cc4e8bc33204ea82e9925fdb8c"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "XMod\\Registry": "classes/"
+                },
+                "files": [
+                    "include.php"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "David Neilsen",
+                    "email": "david@panmedia.co.nz"
+                }
+            ],
+            "description": "Mammoth registry module.",
+            "homepage": "http://www.mammoth-framework.com/modules/registry",
+            "keywords": [
+                "plugin"
+            ],
+            "time": "2014-09-09 02:28:43"
+        },
+        {
+            "name": "xmod/render",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@git.panmedia.co.nz:siteignite/modules/xmod-render",
+                "reference": "27151ac4cf17980bda2e0ebeedf358580f7564ed"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "XMod": "classes/"
+                },
+                "files": [
+                    "include.php"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "David Neilsen",
+                    "email": "david@panmedia.co.nz"
+                },
+                {
+                    "name": "Michael Robinson",
+                    "email": "michael@panmedia.co.nz"
+                }
+            ],
+            "description": "Mammoth render module.",
+            "homepage": "http://www.mammoth-framework.com/modules/render",
+            "keywords": [
+                "render"
+            ],
+            "time": "2014-01-06 21:12:33"
+        },
+        {
+            "name": "xmod/route",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@git.panmedia.co.nz:siteignite/modules/xmod-route",
+                "reference": "cacf9c6d57fba8a521c7d0bc6872b27c836c1644"
+            },
+            "require": {
+                "xmod/http": "dev-master",
+                "xmod/registry": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "XMod": "classes/"
+                },
+                "files": [
+                    "include.php"
+                ]
+            },
+            "authors": [
+                {
+                    "name": "David Neilsen",
+                    "email": "david@panmedia.co.nz"
+                }
+            ],
+            "description": "Mammoth route module.",
+            "homepage": "http://www.mammoth-framework.com/modules/route",
+            "keywords": [
+                "route"
+            ],
+            "time": "2014-09-08 00:18:32"
         }
     ],
-    "packages-dev": [
-
-    ],
-    "aliases": [
-
-    ],
+    "packages-dev": [],
+    "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
         "xmod/error": 20,
-        "xmod/debug": 20
+        "xmod/debug": 20,
+        "xmod/form": 20
     },
-    "platform": [
-
-    ],
-    "platform-dev": [
-
-    ]
+    "platform": [],
+    "platform-dev": []
 }

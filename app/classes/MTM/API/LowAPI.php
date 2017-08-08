@@ -18,39 +18,22 @@ class LowAPI extends BaseAPI {
     private $searchTerms = [];
     private $priceDesired = 1;
     private $priceMax = 100;
+    private $rows = 250;
 
     public function get() {
-        $result = $this->request($this->getClosingURI());
+        $result = $this->request($this->getURI());
         $data = new DataRenderer($result);
         $listings = [];
-        $selectedCategories = $this->getSelectedCategories();
         foreach ($data->list as $listing) {
-            $match = false;
-            foreach ($selectedCategories as $selectedCategory) {
-                if (strpos($listing->category->s(), $selectedCategory) === 0) {
-                    $match = true;
-                    break;
-                }
-            }
-            $searchTerms = $this->getSearchTerms();
-            if ($searchTerms && score($listing->title->s(), $searchTerms) > 0.5) {
-                $match = true;
-            }
-            $priceMax = $this->getPriceMax();
-            if ($priceMax && $listing->priceDisplay->f(true) > $priceMax) {
-                $match = false;
-            }
-            if ($match) {
-                $listings[] = [
-                    'id' => $listing->listingID->i(),
-                    'title' => $listing->title->s(),
-                    'image' => $listing->pictureHref->s(),
-                    'price' => $listing->priceDisplay->s(),
-                    'endDate' => $listing->endDate->d(),
-                ];
-            }
+            yield $listing;
         }
-        return $listings;
+    }
+
+    public function getURI() {
+        $query = buildQuery([
+            'rows' => $this->getRows(),
+        ]);
+        return $this->getClosingURI() . '?' . $query;
     }
 
     public function getCategories() {
@@ -133,5 +116,13 @@ class LowAPI extends BaseAPI {
         return $this;
     }
 
+    public function getRows() {
+        return $this->rows;
+    }
+
+    public function setRows($rows) {
+        $this->rows = $rows;
+        return $this;
+    }
 
 }
